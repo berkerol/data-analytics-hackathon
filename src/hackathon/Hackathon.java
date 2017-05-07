@@ -231,7 +231,7 @@ public class Hackathon {
         ResultSet rs = prep.executeQuery();
         
         while(rs.next()){
-            writer.write(rs.getString("Date") + " ");
+            writer.write(dateToDay(rs.getString("Date")) + " ");
             if(rs.getInt("SalesQuantity") == 0){
                 writer.write(0 + " ");
             }
@@ -259,7 +259,7 @@ public class Hackathon {
         ResultSet rs = prep.executeQuery();
         
         while(rs.next()){
-            writer.write(rs.getString("Date") + " ");
+            writer.write(dateToDay(rs.getString("Date")) + " ");
             if(rs.getInt("SalesQuantity") == 0){
                 writer.write(0 + " ");
             }
@@ -311,7 +311,8 @@ public class Hackathon {
     public static void main(String[] args) throws IOException, ClassNotFoundException, SQLException {
         //printStores();
         //parseProducts();
-        parseProductGroups();
-        //generateForecastData2();
+       //parseProductGroups();
+       generateForecastData();
+        generateForecastData2();
     }
 }
